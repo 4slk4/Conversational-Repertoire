@@ -14,6 +14,7 @@ httpx = "^0.25.1"
 langchain = "^0.0.331"
 python-dotenv = "^1.0.0"
 httpie = "^3.2.2"
+openai = "^1.2.2"
 
 
 [build-system]
