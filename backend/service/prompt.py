@@ -79,8 +79,8 @@ def get_closing(context: Target) -> str:
     "Use the phone to interrupt" \
     ]
 
-    Generate a conversation ender, \
-    which is relevant in this situation, for each tactic in html format with bold bullet points. \
+    Generate a conversation ender \
+    for each tactic in html format with bold bullet points. \
     Start a new line for each bullet point. \
     """
     return closing_prompt
