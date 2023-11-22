@@ -18,7 +18,7 @@ mock_target = Target(
 async def generate_opening(target: Target) -> Plan:
     response = get_completion(get_opening(target))
     return Plan(
-        name="opening",
+        name="Opening",
         content=response
     )
 
@@ -26,7 +26,7 @@ async def generate_opening(target: Target) -> Plan:
 async def generate_topic(target: Target) -> Plan:
     response = get_completion(get_topic(target))
     return Plan(
-        name="topic",
+        name="Topic",
         content=response
     )
 
@@ -34,7 +34,15 @@ async def generate_topic(target: Target) -> Plan:
 async def generate_sustain(target: Target) -> Plan:
     response = get_completion(get_sustain(target))
     return Plan(
-        name="sustain",
+        name="Sustain",
+        content=response
+    )
+
+@router.post("/rapport")
+async def generate_rapport(target: Target) -> Plan:
+    response = get_completion(get_rapport(target))
+    return Plan(
+        name="Build Rapport",
         content=response
     )
 
@@ -42,7 +50,7 @@ async def generate_sustain(target: Target) -> Plan:
 async def generate_closing(target: Target) -> Plan:
     response = get_completion(get_closing(target))
     return Plan(
-        name="closing",
+        name="Closing",
         content=response
     )
 
@@ -50,7 +58,15 @@ async def generate_closing(target: Target) -> Plan:
 async def generate_joke(target: Target) -> Plan:
     response = get_completion(get_joke(target))
     return Plan(
-        name="joke",
+        name="Joke",
+        content=response
+    )
+
+@router.post("/excuse")
+async def generate_excuse(target: Target) -> Plan:
+    response = get_completion(get_excuse(target))
+    return Plan(
+        name="When you say something wrong",
         content=response
     )
 

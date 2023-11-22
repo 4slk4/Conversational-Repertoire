@@ -13,7 +13,8 @@ def get_opening(context: Target) -> str:
     "Say something surprising or shocking", \
     "Use wit and wisdom"]  \
 
-    Generate a conversation starter for each tactic. \
+    Generate a conversation starter for each tactic in html format with bold bullet points \
+    and create spaces between parts. \
     """
     return opening_prompt
 
@@ -24,7 +25,8 @@ def get_topic(context: Target) -> str:
     and our relationship is {context.relationship}. \
     That person is {context.activity}. \
 
-    Generate 5 conversatinal topics with overview for each topic. \
+    Generate 5 conversatinal topics with overview for each topic in html format with bold bullet points \
+    and create spaces between parts. \
     """
     return topic_prompt
 
@@ -39,9 +41,26 @@ def get_sustain(context: Target) -> str:
     ["Ask follow-up questions", "Ask for their opinion", \
     "Expressing Care", "Tell stories"] \
 
-    Generate a conversation sustainer for each tactic. \
+    Generate a conversation sustainer for each tactic in html format with bold bullet points \
+    and create spaces between parts. \
     """
     return sustain_prompt
+
+def get_rapport(context: Target) -> str:
+    rapport_prompt = f"""
+    I want to {context.goal}, and I am {context.situation}. \
+    The person I want to approach is a {context.occupation} \
+    and our relationship is {context.relationship}. \
+    That person is {context.activity}. \
+
+    Here is a list of tactics of how to build rapport: \
+    ["Use Empathetic Language", "Active listening", \
+    "Mirroring", "Open Honesty"] \
+
+    For each tactic, show me how to use it and return in html format with bold bullet points \
+    and create spaces between parts. \
+    """
+    return rapport_prompt
 
 def get_closing(context: Target) -> str:
     closing_prompt = f"""
@@ -61,7 +80,8 @@ def get_closing(context: Target) -> str:
     ]
 
     Generate a conversation ender, \
-    which is relevant in this situation, for each tactic. \
+    which is relevant in this situation, for each tactic in html format with bold bullet points. \
+    Start a new line for each bullet point. \
     """
     return closing_prompt
 
@@ -71,9 +91,29 @@ def get_joke(context: Target) -> str:
     The person I am talking to is a {context.occupation} \
     and our relationship is {context.relationship}. \
     
-    Generate five self-deprecating jokes. \
+    There are 3 types of humors I want to use: \
+    ["Self-deprecating", "Misdirection", "Exaggeration", "Puns"] \
+    
+    For each type of humor, generate three jokes and \
+    return in html format with italic bullet points and bold headings, \ 
+    and make sure to create 2 spaces between parts. \
     """
     return joke_prompt
+
+def get_excuse(context: Target) -> str:
+    excuse_prompt = f"""
+    I want to {context.goal}, and I am a {context.situation}. \
+    The person I am talking to is a {context.occupation} \
+    and our relationship is {context.relationship}. \
+    
+    When I make a bad mistake in a conversation, there are five tactics to excuse: \
+    ["Explaning Good Intention", "Apology", "Forgetting", "Deflection", Distraction] \
+    
+    Explain each tactic with an example and \
+    return in html format with italic bullet points and bold headings, \ 
+    and make sure to create 2 spaces between parts. \
+    """
+    return excuse_prompt
 
 
 

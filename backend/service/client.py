@@ -8,7 +8,8 @@ openai.api_key  = os.getenv('OPENAI_API_KEY')
 
 
 # Select the model
-llm_model = "gpt-3.5-turbo"
+# llm_model = "gpt-3.5-turbo-1106"
+llm_model = "gpt-4"
 
 
 def get_completion(prompt, model=llm_model) -> str:
