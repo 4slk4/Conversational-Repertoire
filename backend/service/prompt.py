@@ -25,7 +25,7 @@ def get_topic(context: Target) -> str:
     and our relationship is {context.relationship}. \
     That person is {context.activity}. \
 
-    Generate 5 conversatinal topics with overview for each topic in html format with bold bullet points \
+    Generate 5 conversational topics with overview for each topic in html format with bold bullet points \
     and create spaces between parts. \
     """
     return topic_prompt
@@ -38,10 +38,10 @@ def get_sustain(context: Target) -> str:
     That person is {context.activity}. \
 
     Here is a list of tactics of how to sustain a conversation: \
-    ["Ask follow-up questions", "Ask for their opinion", \
-    "Expressing Care", "Tell stories"] \
+    ["Tell stories", "Show interest in them", \
+    "Ask for their opinion", "Ask follow-up questions"] \
 
-    Generate a conversation sustainer for each tactic in html format with bold bullet points \
+    Generate a conversational sustainer for each tactic in html format with bold bullet points \
     and create spaces between parts. \
     """
     return sustain_prompt
@@ -106,10 +106,10 @@ def get_excuse(context: Target) -> str:
     The person I am talking to is a {context.occupation} \
     and our relationship is {context.relationship}. \
     
-    When I make a bad mistake in a conversation, there are five tactics to excuse: \
+    I make a bad mistake in a conversation, there are five tactics to excuse: \
     ["Explaning Good Intention", "Apology", "Forgetting", "Deflection", Distraction] \
     
-    Explain each tactic with an example and \
+    For each tactic, generate an excuse and \
     return in html format with italic bullet points and bold headings, \ 
     and make sure to create 2 spaces between parts. \
     """

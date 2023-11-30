@@ -18,7 +18,7 @@ mock_target = Target(
 async def generate_opening(target: Target) -> Plan:
     response = get_completion(get_opening(target))
     return Plan(
-        name="Opening",
+        name="Opening Lines",
         content=response
     )
 
@@ -50,7 +50,7 @@ async def generate_rapport(target: Target) -> Plan:
 async def generate_closing(target: Target) -> Plan:
     response = get_completion(get_closing(target))
     return Plan(
-        name="Closing",
+        name="Closing Lines",
         content=response
     )
 
@@ -58,7 +58,7 @@ async def generate_closing(target: Target) -> Plan:
 async def generate_joke(target: Target) -> Plan:
     response = get_completion(get_joke(target))
     return Plan(
-        name="Joke",
+        name="Jokes",
         content=response
     )
 
