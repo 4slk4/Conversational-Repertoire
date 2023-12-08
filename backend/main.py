@@ -17,13 +17,6 @@ mock_target = Target(
 
 );
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-);
 
 app.include_router(make_plan.router);
 
@@ -31,6 +24,13 @@ app.include_router(make_plan.router);
 def hello():
     return "Welcome to the backend!"
 
+app = CORSMiddleware(
+    app=app,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 if __name__ == "__main__":
     import uvicorn
