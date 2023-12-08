@@ -19,7 +19,7 @@ mock_target = Target(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://conversational-repertoire.vercel.app"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -33,5 +33,5 @@ def hello():
 
 
 if __name__ == "__main__":
-    import uvicorn;
-    uvicorn.run("main:app", reload=True);
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

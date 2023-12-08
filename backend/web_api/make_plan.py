@@ -14,6 +14,14 @@ mock_target = Target(
     activity="watching TV",
 );
 
+@router.post("/test")
+async def generate_opening(target: Target=mock_target) -> Plan:
+    response = get_completion(get_opening(target))
+    return Plan(
+        name="Opening Lines",
+        content=response
+    )
+
 @router.post("/opening")
 async def generate_opening(target: Target) -> Plan:
     response = get_completion(get_opening(target))
