@@ -17,7 +17,7 @@
   const endpoints = ['opening', 'topic', 'sustain', 'rapport', 'closing', 'joke', 'excuse'];
 
   async function fetchPlan(endpoint: string): Promise<ConversationPlan> {
-    const response = await fetch(`http://localhost:8000/plan/${endpoint}`, {
+    const response = await fetch(`https://conversational-repertoire-backend.vercel.app/plan/${endpoint}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
