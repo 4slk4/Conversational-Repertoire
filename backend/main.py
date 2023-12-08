@@ -19,7 +19,7 @@ mock_target = Target(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://conversational-repertoire.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
